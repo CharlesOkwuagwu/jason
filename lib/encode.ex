@@ -223,7 +223,7 @@ defmodule Jason.Encode do
   defp struct(value, _escape, _encode_map, Decimal) do
     # silence the xref warning
     decimal = Decimal
-    decimal.to_string(value, :normal)
+    decimal.to_string(value)
   end
 
   defp struct(value, escape, encode_map, Fragment) do
