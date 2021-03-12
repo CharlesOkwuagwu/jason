@@ -223,9 +223,9 @@ end
 
 defimpl Jason.Encoder, for: Decimal do
   def encode(value, _opts) do
-    # silence the xref warning
+      # silence the xref warning
     decimal = Decimal
-    [?\", decimal.to_string(value), ?\"]
+    decimal.to_string(value, :normal)
   end
 end
 
